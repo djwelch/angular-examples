@@ -1,0 +1,42 @@
+{
+  "name": "scraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "python:create": "python -m venv .pyenv",
+    "python:freeze": "pip freeze > .pyenv.requirements",
+    "python:activate": ".pyenv\\Scripts\\activate",
+    "terraform:init": "terraform init infrastructure",
+    "terraform:import": "terraform import -state=infrastructure/terraform.tfstate -var-file=infrastructure/development.tfvars -config=infrastructure",
+    "terraform:plan": "terraform plan -state=infrastructure/terraform.tfstate -var-file=infrastructure/development.tfvars infrastructure",
+    "terraform:apply": "terraform apply -state=infrastructure/terraform.tfstate -var-file=infrastructure/development.tfvars infrastructure",
+    "terraform:state": "terraform state show -state=infrastructure/terraform.tfstate ",
+    "terraform:output": "terraform output -state=infrastructure/terraform.tfstate -json",
+    "app:start": "parcel serve src/index.html -d build/dist",
+    "app:build": "parcel build src/index.html -d build/dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/compiler-cli": "^7.2.7",
+    "@angular/platform-browser-dynamic": "^7.2.7",
+    "@types/dom-inputevent": "^1.0.3",
+    "parcel-bundler": "^1.11.0",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "@angular/common": "^7.2.7",
+    "@angular/compiler": "^7.2.7",
+    "@angular/core": "^7.2.7",
+    "@angular/forms": "^7.2.7",
+    "@angular/platform-browser": "^7.2.7",
+    "@angular/router": "^7.2.7",
+    "core-js": "^2.6.5",
+    "rxjs": "^6.4.0",
+    "systemjs": "^3.0.1",
+    "zone.js": "^0.8.29"
+  }
+}
