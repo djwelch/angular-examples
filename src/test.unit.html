@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Some App</title>
+    <link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css" />
+    <script>
+      var initialized = false;
+    </script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script>
+      mocha.setup('bdd');
+    </script>
+    <script src="./libs.ts"></script>
+    <script src="./test.unit.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script>
+      initialized = true;
+      mocha.run();
+    </script>
+  </body>
+</html>

@@ -14,6 +14,7 @@
     "terraform:apply": "terraform apply -state=infrastructure/terraform.tfstate -var-file=infrastructure/development.tfvars infrastructure",
     "terraform:state": "terraform state show -state=infrastructure/terraform.tfstate ",
     "terraform:output": "terraform output -state=infrastructure/terraform.tfstate -json",
+    "app:test": "parcel serve src/test.unit.html -d build/dist",
     "app:start": "parcel serve src/index.html -d build/dist",
     "app:build": "parcel build src/index.html -d build/dist"
   },
@@ -23,7 +24,13 @@
   "devDependencies": {
     "@angular/compiler-cli": "^7.2.7",
     "@angular/platform-browser-dynamic": "^7.2.7",
+    "@types/chai": "^4.1.7",
+    "@types/chai-as-promised": "^7.1.0",
     "@types/dom-inputevent": "^1.0.3",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.0.2",
     "parcel-bundler": "^1.11.0",
     "typescript": "^3.1.6"
   },
